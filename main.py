@@ -1,10 +1,13 @@
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request, session, url_for
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
-    return "Hello, World!"
+def home():
+    if "userneme" in session:
+        return redirect(url_for('/dashboard'))
+    return render_template('index.html')
 
 
 
