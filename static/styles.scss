@@ -1,0 +1,128 @@
+// Variables
+$primary-color: #3498db;
+$primary-color-hover: darken($primary-color, 10%);
+$secondary-color: #2ecc71;
+$secondary-color-hover: darken($secondary-color, 10%);
+$background-color: wheat;
+$container-bg-color: #fff;
+$text-color: #333;
+$subtext-color: #777;
+
+// Stylling
+body {
+  background-color: $background-color;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  background-color: $container-bg-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  margin-top: 20px;
+  h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: $text-color;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.container {
+  background-color: $container-bg-color;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: 50px auto;
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5rem;
+    color: $text-color;
+  }
+
+  p {
+    color: $subtext-color;
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      &:hover {
+        color: $primary-color-hover;
+      }
+    }
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: $primary-color;
+    // color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-color-hover;
+    }
+
+    &.btn-login {
+      background-color: $primary-color;
+      color: #fff;
+
+      &:hover {
+        background-color: $primary-color-hover;
+      }
+    }
+
+    &.btn-register {
+      background-color: $secondary-color;
+      color: #fff;
+
+      &:hover {
+        background-color: $secondary-color-hover;
+      }
+    }
+  }
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}

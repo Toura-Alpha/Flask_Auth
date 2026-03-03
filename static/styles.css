@@ -1,0 +1,105 @@
+body {
+  background-color: wheat;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+  margin-top: 20px;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #333;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: 50px auto;
+}
+.container h2 {
+  font-size: 2.5em;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+.container p {
+  color: #777;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.container p a {
+  color: #3498db;
+  text-decoration: none;
+}
+.container p a:hover {
+  color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+.container .input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.container .input-field:focus {
+  border-color: #3498db;
+  outline: none;
+}
+.container .btn {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.container .btn:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+.container .btn.btn-login {
+  background-color: #3498db;
+  color: #fff;
+}
+.container .btn.btn-login:hover {
+  background-color: rgb(33.1380753138, 125.1882845188, 186.8619246862);
+}
+.container .btn.btn-register {
+  background-color: #2ecc71;
+  color: #fff;
+}
+.container .btn.btn-register:hover {
+  background-color: rgb(36.616, 162.384, 89.948);
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}/*# sourceMappingURL=styles.css.map */
