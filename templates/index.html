@@ -4,11 +4,31 @@
 
 <div class="container">
     <h1>Welcome to Flask Authentication</h1>
-    <form action="">
+    {% if error %}
+    <div class="error-message">{{ error }}</div>
+    {% endif %}
+    <form id="auth-form" method="POST" action="{{ url_for('login') }}">
         <input type="text" placeholder="Username" name="username" class="input-field" />
         <input type="password" placeholder="Password" name="password" class="input-field" />
-        <input type="submit" value="Login" class="btn btn-login">
-        <input type="button" value="Register" class="btn btn-login" />
+        <input type="submit" value="Login" class="btn btn-login" onclick="setActionForm('login')">
+        <input type="button" value="Register" class="btn btn-login" onclick="setActionForm('register')" />
     </form>
 </div>
+
+<script>
+    function setActionForm(action) {
+        let form = document.getElementById('auth-form');
+        if (action === 'login') {
+            form.action = "{{ url_for('login') }}";
+            form.method = "POST";
+            form.submit();
+        } else {
+            form.action = "{{ url_for('register') }}";
+            form.method = "POST";
+            form.submit();
+        }
+    }
+</script>
+
+
 {% endblock %}
