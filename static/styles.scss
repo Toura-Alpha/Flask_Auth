@@ -119,6 +119,15 @@ main {
         background-color: $secondary-color-hover;
       }
     }
+
+    &.btn-logout {
+      background-color: $secondary-color;
+      color: #fff;
+
+      &:hover {
+        background-color: $secondary-color-hover;
+      }
+    }
   }
 }
 

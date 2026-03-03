@@ -98,6 +98,13 @@ main {
 .container .btn.btn-register:hover {
   background-color: rgb(36.616, 162.384, 89.948);
 }
+.container .btn.btn-logout {
+  background-color: #2ecc71;
+  color: #fff;
+}
+.container .btn.btn-logout:hover {
+  background-color: rgb(36.616, 162.384, 89.948);
+}
 
 .error-message {
   color: red;
