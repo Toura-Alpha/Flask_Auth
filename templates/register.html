@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Register</h1>
+    {% if error %}
+    <div class="error-message">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('register') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+        <div class="form-group">
+            <input type="text" placeholder="Username" name="username" class="input-field" required minlength="3"
+                maxlength="25" />
+        </div>
+
+        <div class="form-group">
+            <input type="password" placeholder="Password (min 8 chars, letters + numbers)" name="password"
+                class="input-field" required minlength="8" />
+        </div>
+
+        <input type="submit" value="Register" class="btn btn-register" />
+    </form>
+
+    <hr>
+
+    <p class="or-text">Or</p>
+
+    <input type="button" value="Register with Google" class="btn login-google"
+        onclick="window.location.href='{{ url_for('login_google') }}'">
+
+    <p class="login-link">Already have an account? <a href="{{ url_for('home') }}">Login here</a></p>
+</div>
+
+{% endblock %}

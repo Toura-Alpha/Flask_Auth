@@ -3,32 +3,31 @@
 {% block content %}
 
 <div class="container">
-    <h1>Welcome to Flask Authentication</h1>
+    <h1>Login</h1>
     {% if error %}
     <div class="error-message">{{ error }}</div>
     {% endif %}
-    <form id="auth-form" method="POST" action="{{ url_for('login') }}">
-        <input type="text" placeholder="Username" name="username" class="input-field" />
-        <input type="password" placeholder="Password" name="password" class="input-field" />
-        <input type="submit" value="Login" class="btn btn-login" onclick="setActionForm('login')">
-        <input type="button" value="Register" class="btn btn-register" onclick="setActionForm('register')" />
+
+    <form method="POST" action="{{ url_for('login') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+        <div class="form-group">
+            <input type="text" placeholder="Username" name="username" class="input-field" required />
+        </div>
+
+        <div class="form-group">
+            <input type="password" placeholder="Password" name="password" class="input-field" required />
+        </div>
+
+        <input type="submit" value="Login" class="btn btn-login">
     </form>
+
+    <div class="auth-links">
+        <p>Don't have an account? <a href="{{ url_for('register_page') }}">Register here</a></p>
+        <p>Or</p>
+        <input type="button" value="Login with Google" class="btn login-google"
+            onclick="window.location.href='{{ url_for('login_google') }}'">
+    </div>
 </div>
-
-<script>
-    function setActionForm(action) {
-        let form = document.getElementById('auth-form');
-        if (action === 'login') {
-            form.action = "{{ url_for('login') }}";
-            form.method = "POST";
-            form.submit();
-        } else {
-            form.action = "{{ url_for('register') }}";
-            form.method = "POST";
-            form.submit();
-        }
-    }
-</script>
-
 
 {% endblock %}
