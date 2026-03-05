@@ -41,7 +41,7 @@ google = auth.register(
     name='google',
     client_id=CLIENT_ID,
     client_secret=CLIENT_SECRET,
-    server_metadata_url='https://accounts.google/.well-known/openid-configuration',
+    server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
     client_kwargs={
         'scope': 'openid email profile'
     }
